@@ -16,16 +16,63 @@
         text-transform: lowercase;
         font-size: 20px;
         backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: end;
         .nav{
             display: flex;
             align-items: center;
-            justify-content: end;
-            gap: 80px;
+            justify-content: space-between;
+            width: 65%;
             .item{
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+        }
+        .nav_mob{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px){
+    .menu_container{
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .menu_container{
+        .menu{
+            .nav{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .menu_container{
+        bottom: 50px;
+        top: auto;
+        padding: 10px 20px;
+        .menu{
+            .nav{
+                display: none;
+            }
+            .nav_mob{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                .item{
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                }
             }
         }
     }

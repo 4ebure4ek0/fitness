@@ -4,6 +4,7 @@ const About = () => {
     return(
         <section className={styles.container}>
             <div className={styles.about}>
+                <h2 className={`${styles.title} section_title`}>О создателе</h2>
                 <p className={styles.description}>
                     Меня зовут <span className={styles.name}>Анна</span>.<br />
                     Я дипломированный тренер и нутрициолог, автор телеграм каналов <a className={styles.link}>С прямой спиной</a> и <a className={styles.link}>С пустой тарелкой</a>. Я променяла офисную жизнь инженера на тренерство. 

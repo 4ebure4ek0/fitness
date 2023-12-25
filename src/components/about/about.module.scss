@@ -5,18 +5,22 @@
     .about{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        .title{
+            grid-column: span 2;
+        }
         .description{
             justify-self: center;
             align-self: center;
             color: #f5f5f5;
             font-family: Jost-Medium;
-            font-size: 28px;
+            font-size: clamp(22px, 2.5vw, 28px);
             line-height: 1.8;
             .link{
                 color: #A7A1EB;
             }
             .name{
-                font-size: 48px;
+                font-size: clamp(36px, 3.5vw, 48px);
             }
         }
         .photo{
@@ -29,7 +33,7 @@
                 transform: rotate(4.75deg);
                 transition: all .8s ease-in-out;
                 &:hover{
-                    scale: 1.1;
+                    scale: 1.05;
                     transform: rotate(0deg);
                 }
             }
@@ -42,7 +46,7 @@
             height: 100px;
             position: relative;
             .slogan_title{
-                font-size: 48px;
+                font-size: clamp(40px, 3.5vw, 48px);
                 position: absolute;
                 top: 0;
                 left: 50px;
@@ -56,13 +60,63 @@
             .description{
                 color: #f5f5f5;
                 font-family: Jost-Medium;
-                font-size: 36px;
+                font-size: clamp(28px, 3.5vw, 36px);
                 line-height: 1.8;
                 position: absolute;
                 bottom: 0;
                 right: 50px;
                 transform: translateY(46%);
                 background-color: #343434;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .container{
+        .about{
+            .photo{
+                .photo_img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px){
+    .container{
+        .about{
+            grid-template-columns: 1fr;
+            gap: 60px;
+            .description{
+                text-align: center;
+            }
+            .photo{
+                width: 70%;
+                .photo_img{
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+        .slogan{
+            height: 10vh;
+            .slogan_border{
+                position: absolute;
+                left: 0;
+                border-right: none;
+                border-left: none;
+                width: 100%;
+                border-radius: 0;
+                .slogan_title{
+                    left: 25px;
+                }
+                .description{
+                    font-size: clamp(20px, 3.5vw, 28px);
+                    right: 25px;
+                }
             }
         }
     }

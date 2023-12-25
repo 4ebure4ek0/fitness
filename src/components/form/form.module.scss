@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: var(--pad);
     padding: 40px 0;
     .form_block{
         width: 70%;

@@ -1,6 +1,6 @@
 import About from "components/about/about";
 import Banner from "components/banner/banner"
-import Footer from "components/footer/footer";
+// import Footer from "components/footer/footer";
 import Form from "components/form/form";
 import Products from "components/products/products";
 import { useEffect } from "react";
@@ -25,7 +25,7 @@ const Main = () => {
         <About />
         <Form />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
