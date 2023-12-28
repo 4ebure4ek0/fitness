@@ -2,8 +2,8 @@ import Product from "components/product/product";
 import styles from "./products.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css'
-// import { IconContext } from "react-icons";
-// import { BsStars } from "react-icons/bs";
+import Modal from "components/model/modal";
+import { useState } from "react";
 
 const products = [
   {
@@ -65,18 +65,25 @@ const products = [
 ];
 
 const Products = () => {
+  const[openModal, setOpenModal] = useState(false)
+  const[itemModal, setItemModal] = useState({})
+
+  const toggleModal = (e: any, item: undefined | string = undefined) => {
+    if(e.target.classList.contains('modal_open') ){
+      setOpenModal(!openModal)
+    }
+    if(!!item){
+      setItemModal(item)
+    }
+  }
+
   return (
     <section className={styles.container}>
       <h2 className='section_title'>Курсы</h2>
-      <Swiper slidesPerView={1.2} spaceBetween={50}>
-        {products.map((product, n) => (<SwiperSlide key={n}><Product exists={product.exists} equip={product.equip} name={product.name} desc={product.desc} img={product.img}/></SwiperSlide>))}
+      <Swiper slidesPerView={1.2} spaceBetween={50} className={styles.slider}>
+        {products.map((product, n) => (<SwiperSlide key={n}><Product exists={product.exists} equip={product.equip} name={product.name} desc={product.desc} img={product.img} more_onclick={toggleModal}/></SwiperSlide>))}
       </Swiper>
-      {/* <p className={styles.description}>
-        <IconContext.Provider value={{ size: "3em", color: "#f5f5f5"}}>
-            <BsStars />
-        </IconContext.Provider>
-        Короткие и эффективные тренировки для занятых людей. Заниматься можно в любое время и в любом месте, потребуется минимум оборудования
-      </p> */}
+      {openModal? <Modal onclick={toggleModal} item={itemModal}/> : null}
     </section>
   );
 }

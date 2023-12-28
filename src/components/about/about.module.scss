@@ -90,6 +90,9 @@
         .about{
             grid-template-columns: 1fr;
             gap: 60px;
+            .title{
+                grid-column: auto;
+            }
             .description{
                 text-align: center;
             }

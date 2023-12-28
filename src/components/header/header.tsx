@@ -20,22 +20,22 @@ const Header = () => {
         </nav>
         <nav className={styles.nav_mob}>
           <span className={styles.item}>
-            <IconContext.Provider value={{ size: "2em" }}>
+            <IconContext.Provider value={{ size: "1.5em" }}>
               <MdOutlineSportsMartialArts />
             </IconContext.Provider>
           </span>
           <span className={styles.item}>
-            <IconContext.Provider value={{ size: "2em" }}>
+            <IconContext.Provider value={{ size: "1.5em" }}>
               <MdOutlinePerson3 />
             </IconContext.Provider>
           </span>
           <span className={styles.item}>
-            <IconContext.Provider value={{ size: "2em" }}>
+            <IconContext.Provider value={{ size: "1.2em" }}>
               <FaRegMessage />
             </IconContext.Provider>
           </span>
           <span className={styles.item}>
-            <IconContext.Provider value={{ size: "2em" }}>
+            <IconContext.Provider value={{ size: "1.5em" }}>
               <GoArrowUpRight />
             </IconContext.Provider>
           </span>

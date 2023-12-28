@@ -54,10 +54,12 @@
 
 @media screen and (max-width: 640px) {
     .menu_container{
-        bottom: 50px;
+        bottom: 100px;
         top: auto;
         padding: 10px 20px;
         .menu{
+            width: 60%;
+            padding: 10px 10px;
             .nav{
                 display: none;
             }
