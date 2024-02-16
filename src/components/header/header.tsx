@@ -5,14 +5,25 @@ import { MdOutlinePerson3 } from "react-icons/md";
 import { FaRegMessage } from "react-icons/fa6";
 import { IconContext } from "react-icons";
 
-const Header = () => {
+interface IProps{
+  handleMenu: (item:string) => void
+}
+
+const Header = (props:IProps) => {
+  const handleMenuItem = (e:React.SyntheticEvent<EventTarget>) => {
+    if (!(e.target instanceof HTMLSpanElement)) {
+      return;
+    }
+    if(!!e.target.dataset.name)
+      props.handleMenu(e.target.dataset.name)
+  }
     return(
       <div className={styles.menu_container}>
               <header className={styles.menu}>
         <nav className={styles.nav}>
-          <span className={styles.item}>курсы</span>
-          <span className={styles.item}>о создателе</span>
-          <span className={styles.item}>обратная связь</span>
+          <span className={styles.item} data-name={'products'} onClick={handleMenuItem}>курсы</span>
+          <span className={styles.item} data-name={'about'} onClick={handleMenuItem}>о создателе</span>
+          <span className={styles.item} data-name={'form'} onClick={handleMenuItem}>обратная связь</span>
           <span className={styles.item}>
             личный кабинет
             <GoArrowUpRight />

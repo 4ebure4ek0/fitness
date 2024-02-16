@@ -1,5 +1,7 @@
 import Layout from "components/layout/layout"
-import Main from "pages/main"
+import Course from "pages/coursePage/coursePage"
+import Lk from "pages/lkPage/lkPage"
+import Main from "pages/mainPage/mainPage"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Main />}/>
         </Route>
+        <Route path='/lk' element={<Lk />}/>
+        <Route path='/lk/course/:id' element={<Course />}/>
       </Routes>
     </BrowserRouter>
   )
