@@ -1,0 +1,33 @@
+.model_container{
+    background-color: #00000080;
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .model_block{
+        background-color: #343434;
+        max-width: 70vw;
+        width: 70vw;
+        height: 70vh;
+        padding: 40px;
+        .model_content{
+            border: 3px solid #f5f5f5;
+            border-radius: var(--radius);
+            height: 100%;
+            position: relative;
+            .model_title{
+                background-color: #343434;
+                color: #FF8431;
+                font-family: Jost-Regular;
+                position: absolute;
+                top: 0;
+                left: 50px;
+                font-size: 36px;
+                padding: 0 5px;
+                transform: translateY(-60%);
+            }
+        }
+    }
+}

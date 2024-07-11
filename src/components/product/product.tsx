@@ -11,12 +11,12 @@ interface IProps {
 
 const Product = (props: IProps) => {
   return (
-    <div className={`${styles.product_card} ${props.exists ? '' : styles.hidden}`}>
+    <div className={`${styles.product_card} ${props.exists ? '' : styles.hidden} modal_open`} onClick={(e) => props.more_onclick(e, props)}>
       {props.exists ? null : (
         <div className={styles.comming}>в разработке...</div>
       )}
       <h2>{props.name}</h2>
-      <button onClick={(e) => props.more_onclick(e, props)} className="modal_open">Подробнее</button>
+      {/* <button className={`${styles.modal_btn} modal_open`}>Подробнее</button>s */}
     </div>
   );
 };

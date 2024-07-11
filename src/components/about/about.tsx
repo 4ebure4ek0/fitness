@@ -1,8 +1,9 @@
+import React from 'react'
 import styles from './about.module.scss'
 
-const About = () => {
+const About = React.forwardRef<HTMLDivElement>((props, ref) => {
     return(
-        <section className={styles.container}>
+        <section className={styles.container} ref={ref}>
             <div className={styles.about}>
                 <h2 className={`${styles.title} section_title`}>О создателе</h2>
                 <p className={styles.description}>
@@ -29,6 +30,6 @@ const About = () => {
             </div>
         </section>
     )
-}
+})
 
 export default About
